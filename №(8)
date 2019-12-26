@@ -1,27 +1,24 @@
 #include <iostream>
 using namespace std;
-
-int proper_fraction (int n) {
-    int res = n, del = 2;
-    while (n != 1) {
-        if (n % del == 0) {
-            while (n % del == 0) {
-                n /= del;
+int proper_fraction ( int n ){
+    int s=n, l=2;
+    while ( n!=1 ){
+        if ( n%l==0 ){
+	while ( n%l==0 ){
+                n/=l;
             }
-            res *= (del - 1);
-            res /= del;
+            s*=( l-1 );
+            s/=l;
         }
-        del++;
+        l++;
     }
-    return res;
+    return s;
 }
 
-int main ()
-{
+int main (){
 	int n;
 	cin >> n;
-
-    cout << proper_fraction(n);
+        cout << proper_fraction(n);
 
 	return 0;
 }
