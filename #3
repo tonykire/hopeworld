@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int bss[300][300];
+int bbss(int n){
+  for ( int i=0; i<(n+1)/2; i++ ){
+      for ( int j=i; j<(n-i); j++ ){
+          bss[i][j]=i+1;
+          bss[ n-(i+1) ][j]=i+1;
+          bss[j][i]=i+1;
+          bss[j][ n-(i+1) ]=i+1;
+        }
+    }
+return 1;
+}
+
+int main(){
+  int n;
+  cin >> n;
+  bbss(n);
+  for ( int i=0; i<n; i++ ){
+      for ( int j=0; j<n; j++ ){
+          cout << bss[i][j] << " ";
+        }
+        cout << endl;
+    }
+return 0;
+}
