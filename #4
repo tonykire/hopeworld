@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+void dig_trench( int n, int Trench[100][100] ){
+     for ( int i=0; i<n; i++ ){
+         for ( int j=0; j<n; j++ ){
+             if ( i==j ){
+                cout << 0 << " ";
+            } else {
+                   
+                   for ( int l=1; l<n; l++ ){
+                       if ( abs(j-i)==l ) {
+                       cout << l << " ";
+                       }
+                   }
+                   }
+        }
+cout << endl;
+    }
+}
+
+
+int main(){
+    int x;
+    cin >> x;
+    int bss[100][100];
+    dig_trench(x, bss);
+    return 0;
+}
